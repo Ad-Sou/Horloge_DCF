@@ -1,0 +1,8 @@
+Added Pin To Net: NetName=NetHDR_DE0_1_30 Pin=act1-3
+Added Pin To Net: NetName=NetHDR_DE0_1_30 Pin=act2-3
+Added Pin To Net: NetName=NetHDR_DE0_1_30 Pin=act3-3
+Added Pin To Net: NetName=NetHDR_DE0_1_30 Pin=act4-3
+Added Pin To Net: NetName=NetHDR_DE0_1_30 Pin=act5-3
+Added Pin To Net: NetName=NetHDR_DE0_1_30 Pin=act6-3
+Change Net Name : Old Net Name=NetHDR_DE0_1_30 New Net Name=Netact1_3
+Added Room: Name=Schema_Horloge_DCF

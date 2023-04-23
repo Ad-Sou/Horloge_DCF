@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=GND Pin=HDR_DE0_1-30
+Added Pin To Net: NetName=GND Pin=HDR_DE0_1-12
+Added Pin To Net: NetName=GND Pin=HDR_DE0_1-12
+Added Room: Name=Schema_Horloge_DCF

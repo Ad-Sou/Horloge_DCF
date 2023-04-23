@@ -1,0 +1,93 @@
+Removed Pin From Net: NetName=Netact1_2 Pin=HDR_DE0_1-14
+Removed Pin From Net: NetName=Netact2_2 Pin=HDR_DE0_1-16
+Removed Pin From Net: NetName=Netact3_2 Pin=HDR_DE0_1-18
+Removed Pin From Net: NetName=Netact4_2 Pin=HDR_DE0_1-24
+Removed Pin From Net: NetName=Netact5_2 Pin=HDR_DE0_1-26
+Removed Pin From Net: NetName=Netact6_2 Pin=HDR_DE0_1-28
+Removed Pin From Net: NetName=NetHDR_DE0_1_29 Pin=R1-1
+Removed Pin From Net: NetName=NetHDR_DE0_1_29 Pin=R2-1
+Removed Pin From Net: NetName=NetHDR_DE0_1_29 Pin=R3-1
+Added Component: Designator=R1(RESC2012X05N)
+Add component (AddParameter): Name = "Mounting"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Added Component: Designator=R2(RESC2012X05N)
+Add component (AddParameter): Name = "Mounting"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Added Component: Designator=R3(RESC2012X05N)
+Add component (AddParameter): Name = "Mounting"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Netact6_2 Pin=HDR_DE0_1-13
+Added Pin To Net: NetName=Netact6_2 Pin=HDR_DE0_1-13
+Added Pin To Net: NetName=Netact5_2 Pin=HDR_DE0_1-15
+Added Pin To Net: NetName=Netact5_2 Pin=HDR_DE0_1-15
+Added Pin To Net: NetName=Netact4_2 Pin=HDR_DE0_1-17
+Added Pin To Net: NetName=Netact4_2 Pin=HDR_DE0_1-17
+Added Pin To Net: NetName=Netact3_2 Pin=HDR_DE0_1-23
+Added Pin To Net: NetName=Netact3_2 Pin=HDR_DE0_1-23
+Added Pin To Net: NetName=Netact2_2 Pin=HDR_DE0_1-25
+Added Pin To Net: NetName=Netact2_2 Pin=HDR_DE0_1-25
+Added Pin To Net: NetName=Netact1_2 Pin=HDR_DE0_1-27
+Added Pin To Net: NetName=Netact1_2 Pin=HDR_DE0_1-27
+Added Pin To Net: NetName=NetHDR_DE0_1_29 Pin=R1-2
+Added Pin To Net: NetName=NetHDR_DE0_1_29 Pin=R2-2
+Added Pin To Net: NetName=NetHDR_DE0_1_29 Pin=R3-2
+Added Pin To Net: NetName=NetHDR_DE0_1_2 Pin=HDR_DE0_1-2
+Added Pin To Net: NetName=NetHDR_DE0_1_2 Pin=HDR_DE0_1-2
+Added Pin To Net: NetName=NetHDR_DE0_1_2 Pin=micro_bouton1-1
+Added Pin To Net: NetName=NetHDR_DE0_1_2 Pin=micro_bouton1-1
+Added Net: Name=NetHDR_DE0_1_2
+Added Pin To Net: NetName=NetHDR_DE0_1_4 Pin=HDR_DE0_1-4
+Added Pin To Net: NetName=NetHDR_DE0_1_4 Pin=HDR_DE0_1-4
+Added Pin To Net: NetName=NetHDR_DE0_1_4 Pin=micro_bouton3-1
+Added Pin To Net: NetName=NetHDR_DE0_1_4 Pin=micro_bouton3-1
+Added Net: Name=NetHDR_DE0_1_4
+Added Pin To Net: NetName=NetHDR_DE0_1_6 Pin=HDR_DE0_1-6
+Added Pin To Net: NetName=NetHDR_DE0_1_6 Pin=HDR_DE0_1-6
+Added Pin To Net: NetName=NetHDR_DE0_1_6 Pin=micro_bouton2-1
+Added Pin To Net: NetName=NetHDR_DE0_1_6 Pin=micro_bouton2-1
+Added Net: Name=NetHDR_DE0_1_6
+Added Pin To Net: NetName=NetHDR_DE0_1_14 Pin=HDR_DE0_1-14
+Added Pin To Net: NetName=NetHDR_DE0_1_14 Pin=HDR_DE0_1-14
+Added Pin To Net: NetName=NetHDR_DE0_1_14 Pin=R8_51-2
+Added Net: Name=NetHDR_DE0_1_14
+Added Pin To Net: NetName=NetHDR_DE0_1_16 Pin=HDR_DE0_1-16
+Added Pin To Net: NetName=NetHDR_DE0_1_16 Pin=HDR_DE0_1-16
+Added Pin To Net: NetName=NetHDR_DE0_1_16 Pin=R7_51-2
+Added Net: Name=NetHDR_DE0_1_16
+Added Pin To Net: NetName=NetHDR_DE0_1_18 Pin=HDR_DE0_1-18
+Added Pin To Net: NetName=NetHDR_DE0_1_18 Pin=HDR_DE0_1-18
+Added Pin To Net: NetName=NetHDR_DE0_1_18 Pin=R6_51-2
+Added Net: Name=NetHDR_DE0_1_18
+Added Pin To Net: NetName=NetHDR_DE0_1_20 Pin=HDR_DE0_1-20
+Added Pin To Net: NetName=NetHDR_DE0_1_20 Pin=HDR_DE0_1-20
+Added Pin To Net: NetName=NetHDR_DE0_1_20 Pin=R5_51-2
+Added Net: Name=NetHDR_DE0_1_20
+Added Pin To Net: NetName=NetHDR_DE0_1_22 Pin=HDR_DE0_1-22
+Added Pin To Net: NetName=NetHDR_DE0_1_22 Pin=HDR_DE0_1-22
+Added Pin To Net: NetName=NetHDR_DE0_1_22 Pin=R4_51-2
+Added Net: Name=NetHDR_DE0_1_22
+Added Pin To Net: NetName=NetHDR_DE0_1_24 Pin=HDR_DE0_1-24
+Added Pin To Net: NetName=NetHDR_DE0_1_24 Pin=HDR_DE0_1-24
+Added Pin To Net: NetName=NetHDR_DE0_1_24 Pin=R3_51-2
+Added Net: Name=NetHDR_DE0_1_24
+Added Pin To Net: NetName=NetHDR_DE0_1_26 Pin=HDR_DE0_1-26
+Added Pin To Net: NetName=NetHDR_DE0_1_26 Pin=HDR_DE0_1-26
+Added Pin To Net: NetName=NetHDR_DE0_1_26 Pin=R2_51-2
+Added Net: Name=NetHDR_DE0_1_26
+Added Pin To Net: NetName=NetHDR_DE0_1_28 Pin=HDR_DE0_1-28
+Added Pin To Net: NetName=NetHDR_DE0_1_28 Pin=HDR_DE0_1-28
+Added Pin To Net: NetName=NetHDR_DE0_1_28 Pin=R1_51-2
+Added Net: Name=NetHDR_DE0_1_28
+Added Pin To Net: NetName=Netmicro_bouton1_2 Pin=micro_bouton1-2
+Added Pin To Net: NetName=Netmicro_bouton1_2 Pin=micro_bouton1-2
+Added Pin To Net: NetName=Netmicro_bouton1_2 Pin=R1-1
+Added Net: Name=Netmicro_bouton1_2
+Added Pin To Net: NetName=Netmicro_bouton2_2 Pin=micro_bouton2-2
+Added Pin To Net: NetName=Netmicro_bouton2_2 Pin=micro_bouton2-2
+Added Pin To Net: NetName=Netmicro_bouton2_2 Pin=R3-1
+Added Net: Name=Netmicro_bouton2_2
+Added Pin To Net: NetName=Netmicro_bouton3_2 Pin=micro_bouton3-2
+Added Pin To Net: NetName=Netmicro_bouton3_2 Pin=micro_bouton3-2
+Added Pin To Net: NetName=Netmicro_bouton3_2 Pin=R2-1
+Added Net: Name=Netmicro_bouton3_2
+Added Room: Name=Schema_Horloge_DCF

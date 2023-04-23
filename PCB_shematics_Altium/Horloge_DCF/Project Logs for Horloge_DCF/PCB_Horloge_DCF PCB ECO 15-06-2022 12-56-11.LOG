@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=NetHDR_DE0_1_5 Pin=micro_bouton1-2
+Removed Pin From Net: NetName=NetHDR_DE0_1_5 Pin=micro_bouton1-2
+Added Pin To Net: NetName=NetHDR_DE0_1_7 Pin=HDR_DE0_1-7
+Added Pin To Net: NetName=NetHDR_DE0_1_7 Pin=HDR_DE0_1-7
+Added Pin To Net: NetName=NetHDR_DE0_1_7 Pin=micro_bouton1-2
+Added Pin To Net: NetName=NetHDR_DE0_1_7 Pin=micro_bouton1-2
+Added Net: Name=NetHDR_DE0_1_7
+Added Net: Name=Netmicro_bouton3_1
+Added Room: Name=Schema_Horloge_DCF

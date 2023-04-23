@@ -1,0 +1,164 @@
+Removed Pin From Net: NetName=Netact1_1 Pin=Seg_Disp1-8
+Removed Pin From Net: NetName=Netact2_1 Pin=Seg_Disp2-8
+Removed Pin From Net: NetName=Netact3_1 Pin=Seg_Disp3-8
+Removed Pin From Net: NetName=Netact4_1 Pin=Seg_Disp4-8
+Removed Pin From Net: NetName=Netact5_1 Pin=Seg_Disp5-8
+Removed Pin From Net: NetName=Netact6_1 Pin=Seg_Disp6-8
+Removed Member From Class: ClassName=Schema_Horloge_DCF Member=Seg_Disp1
+Removed Member From Class: ClassName=Schema_Horloge_DCF Member=Seg_Disp2
+Removed Member From Class: ClassName=Schema_Horloge_DCF Member=Seg_Disp3
+Removed Member From Class: ClassName=Schema_Horloge_DCF Member=Seg_Disp4
+Removed Member From Class: ClassName=Schema_Horloge_DCF Member=Seg_Disp5
+Removed Member From Class: ClassName=Schema_Horloge_DCF Member=Seg_Disp6
+Change Component Designator: OldDesignator=DS? NewDesignator=DS1
+Added Component: Designator=DS2(A-10(14))
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.agilent.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://cp.literature.agilent.com/litweb/pdf/5988-3325EN.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetDocument"; Value = "27-Aug-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "11-Oct-2004"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Display outline superimposed on PCB Footprint."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LED_Colour"; Value = "High Efficiency Red (HER)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LuminousIntensity"; Value = "340 ucd (Minimum)."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = "Pins 2 and 9 are redundant Cathodes."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDocument"; Value = "27-Aug-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "A-10(14)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "26-May-2004"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=DS3(A-10(14))
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.agilent.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://cp.literature.agilent.com/litweb/pdf/5988-3325EN.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetDocument"; Value = "27-Aug-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "11-Oct-2004"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Display outline superimposed on PCB Footprint."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LED_Colour"; Value = "High Efficiency Red (HER)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LuminousIntensity"; Value = "340 ucd (Minimum)."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = "Pins 2 and 9 are redundant Cathodes."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDocument"; Value = "27-Aug-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "A-10(14)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "26-May-2004"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=DS4(A-10(14))
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.agilent.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://cp.literature.agilent.com/litweb/pdf/5988-3325EN.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetDocument"; Value = "27-Aug-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "11-Oct-2004"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Display outline superimposed on PCB Footprint."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LED_Colour"; Value = "High Efficiency Red (HER)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LuminousIntensity"; Value = "340 ucd (Minimum)."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = "Pins 2 and 9 are redundant Cathodes."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDocument"; Value = "27-Aug-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "A-10(14)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "26-May-2004"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=DS5(A-10(14))
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.agilent.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://cp.literature.agilent.com/litweb/pdf/5988-3325EN.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetDocument"; Value = "27-Aug-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "11-Oct-2004"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Display outline superimposed on PCB Footprint."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LED_Colour"; Value = "High Efficiency Red (HER)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LuminousIntensity"; Value = "340 ucd (Minimum)."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = "Pins 2 and 9 are redundant Cathodes."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDocument"; Value = "27-Aug-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "A-10(14)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "26-May-2004"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=DS6(A-10(14))
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.agilent.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://cp.literature.agilent.com/litweb/pdf/5988-3325EN.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetDocument"; Value = "27-Aug-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "11-Oct-2004"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Display outline superimposed on PCB Footprint."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LED_Colour"; Value = "High Efficiency Red (HER)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LuminousIntensity"; Value = "340 ucd (Minimum)."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = "Pins 2 and 9 are redundant Cathodes."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDocument"; Value = "27-Aug-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "A-10(14)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "26-May-2004"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Netact1_1 Pin=DS1-2
+Added Pin To Net: NetName=Netact2_1 Pin=DS2-9
+Added Pin To Net: NetName=Netact3_1 Pin=DS3-9
+Added Pin To Net: NetName=Netact4_1 Pin=DS4-9
+Added Pin To Net: NetName=Netact5_1 Pin=DS5-9
+Added Pin To Net: NetName=Netact6_1 Pin=DS6-9
+Added Pin To Net: NetName=NetDS1_3 Pin=DS1-3
+Added Pin To Net: NetName=NetDS1_3 Pin=DS2-3
+Added Pin To Net: NetName=NetDS1_3 Pin=DS3-3
+Added Pin To Net: NetName=NetDS1_3 Pin=DS4-3
+Added Pin To Net: NetName=NetDS1_3 Pin=DS5-3
+Added Pin To Net: NetName=NetDS1_3 Pin=DS6-3
+Added Pin To Net: NetName=NetDS1_3 Pin=R3-2
+Added Net: Name=NetDS1_3
+Added Pin To Net: NetName=NetDS1_4 Pin=DS1-4
+Added Pin To Net: NetName=NetDS1_4 Pin=DS2-4
+Added Pin To Net: NetName=NetDS1_4 Pin=DS3-4
+Added Pin To Net: NetName=NetDS1_4 Pin=DS4-4
+Added Pin To Net: NetName=NetDS1_4 Pin=DS5-4
+Added Pin To Net: NetName=NetDS1_4 Pin=DS6-4
+Added Pin To Net: NetName=NetDS1_4 Pin=R2-2
+Added Net: Name=NetDS1_4
+Added Pin To Net: NetName=NetDS1_5 Pin=DS1-5
+Added Pin To Net: NetName=NetDS1_5 Pin=DS2-5
+Added Pin To Net: NetName=NetDS1_5 Pin=DS3-5
+Added Pin To Net: NetName=NetDS1_5 Pin=DS4-5
+Added Pin To Net: NetName=NetDS1_5 Pin=DS5-5
+Added Pin To Net: NetName=NetDS1_5 Pin=DS6-5
+Added Pin To Net: NetName=NetDS1_5 Pin=R4-2
+Added Net: Name=NetDS1_5
+Added Pin To Net: NetName=NetDS1_6 Pin=DS1-6
+Added Pin To Net: NetName=NetDS1_6 Pin=DS2-6
+Added Pin To Net: NetName=NetDS1_6 Pin=DS3-6
+Added Pin To Net: NetName=NetDS1_6 Pin=DS4-6
+Added Pin To Net: NetName=NetDS1_6 Pin=DS5-6
+Added Pin To Net: NetName=NetDS1_6 Pin=DS6-6
+Added Pin To Net: NetName=NetDS1_6 Pin=R5-2
+Added Net: Name=NetDS1_6
+Added Pin To Net: NetName=NetDS1_10 Pin=DS1-10
+Added Pin To Net: NetName=NetDS1_10 Pin=DS2-10
+Added Pin To Net: NetName=NetDS1_10 Pin=DS3-10
+Added Pin To Net: NetName=NetDS1_10 Pin=DS4-10
+Added Pin To Net: NetName=NetDS1_10 Pin=DS5-10
+Added Pin To Net: NetName=NetDS1_10 Pin=DS6-10
+Added Pin To Net: NetName=NetDS1_10 Pin=R1-2
+Added Net: Name=NetDS1_10
+Added Pin To Net: NetName=NetDS1_11 Pin=DS1-11
+Added Pin To Net: NetName=NetDS1_11 Pin=DS2-11
+Added Pin To Net: NetName=NetDS1_11 Pin=DS3-11
+Added Pin To Net: NetName=NetDS1_11 Pin=DS4-11
+Added Pin To Net: NetName=NetDS1_11 Pin=DS5-11
+Added Pin To Net: NetName=NetDS1_11 Pin=DS6-11
+Added Pin To Net: NetName=NetDS1_11 Pin=R6-2
+Added Net: Name=NetDS1_11
+Added Pin To Net: NetName=NetDS1_12 Pin=DS1-12
+Added Pin To Net: NetName=NetDS1_12 Pin=DS2-12
+Added Pin To Net: NetName=NetDS1_12 Pin=DS3-12
+Added Pin To Net: NetName=NetDS1_12 Pin=DS4-12
+Added Pin To Net: NetName=NetDS1_12 Pin=DS5-12
+Added Pin To Net: NetName=NetDS1_12 Pin=DS6-12
+Added Pin To Net: NetName=NetDS1_12 Pin=R7-2
+Added Net: Name=NetDS1_12
+Added Pin To Net: NetName=NetDS1_13 Pin=DS1-13
+Added Pin To Net: NetName=NetDS1_13 Pin=DS2-13
+Added Pin To Net: NetName=NetDS1_13 Pin=DS3-13
+Added Pin To Net: NetName=NetDS1_13 Pin=DS4-13
+Added Pin To Net: NetName=NetDS1_13 Pin=DS5-13
+Added Pin To Net: NetName=NetDS1_13 Pin=DS6-13
+Added Pin To Net: NetName=NetDS1_13 Pin=R8-2
+Added Net: Name=NetDS1_13
+Added Member To Class: ClassName=Schema_Horloge_DCF Member=Component DS2 5082-7613
+Added Member To Class: ClassName=Schema_Horloge_DCF Member=Component DS3 5082-7613
+Added Member To Class: ClassName=Schema_Horloge_DCF Member=Component DS4 5082-7613
+Added Member To Class: ClassName=Schema_Horloge_DCF Member=Component DS5 5082-7613
+Added Member To Class: ClassName=Schema_Horloge_DCF Member=Component DS6 5082-7613
+Added Room: Name=Schema_Horloge_DCF

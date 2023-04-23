@@ -1,0 +1,25 @@
+Added Pin To Net: NetName=NetSeg_Disp1_14 Pin=R1_51-1
+Added Pin To Net: NetName=NetSeg_Disp1_14 Pin=R1_100-2
+Added Pin To Net: NetName=NetSeg_Disp1_13 Pin=R2_51-1
+Added Pin To Net: NetName=NetSeg_Disp1_13 Pin=R2_100-2
+Added Pin To Net: NetName=NetSeg_Disp1_11 Pin=R3_51-1
+Added Pin To Net: NetName=NetSeg_Disp1_11 Pin=R3_100-2
+Added Pin To Net: NetName=NetSeg_Disp1_7 Pin=R4_51-1
+Added Pin To Net: NetName=NetSeg_Disp1_7 Pin=R4_100-2
+Added Pin To Net: NetName=NetSeg_Disp1_6 Pin=R5_51-1
+Added Pin To Net: NetName=NetSeg_Disp1_6 Pin=R5_100-2
+Added Pin To Net: NetName=NetSeg_Disp1_2 Pin=R6_51-1
+Added Pin To Net: NetName=NetSeg_Disp1_2 Pin=R6_100-2
+Added Pin To Net: NetName=NetSeg_Disp1_3 Pin=R7_51-1
+Added Pin To Net: NetName=NetSeg_Disp1_3 Pin=R7_100-2
+Added Pin To Net: NetName=NetSeg_Disp1_10 Pin=R8_51-1
+Added Pin To Net: NetName=NetSeg_Disp1_10 Pin=R8_100-2
+Change Net Name : Old Net Name=NetSeg_Disp1_2 New Net Name=NetR6_51_1
+Change Net Name : Old Net Name=NetSeg_Disp1_3 New Net Name=NetR7_51_1
+Change Net Name : Old Net Name=NetSeg_Disp1_6 New Net Name=NetR5_51_1
+Change Net Name : Old Net Name=NetSeg_Disp1_7 New Net Name=NetR4_51_1
+Change Net Name : Old Net Name=NetSeg_Disp1_10 New Net Name=NetR8_51_1
+Change Net Name : Old Net Name=NetSeg_Disp1_11 New Net Name=NetR3_51_1
+Change Net Name : Old Net Name=NetSeg_Disp1_13 New Net Name=NetR2_51_1
+Change Net Name : Old Net Name=NetSeg_Disp1_14 New Net Name=NetR1_51_1
+Added Room: Name=Schema_Horloge_DCF

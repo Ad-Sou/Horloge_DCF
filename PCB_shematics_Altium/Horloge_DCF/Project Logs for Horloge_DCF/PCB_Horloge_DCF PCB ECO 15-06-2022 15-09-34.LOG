@@ -1,0 +1,16 @@
+Added Pin To Net: NetName=NetHDR_DE0_1_36 Pin=HDR_DE0_1-36
+Added Pin To Net: NetName=NetHDR_DE0_1_36 Pin=HDR_DE0_1-36
+Added Pin To Net: NetName=NetHDR_DE0_1_36 Pin=micro_bouton3-2
+Added Pin To Net: NetName=NetHDR_DE0_1_36 Pin=micro_bouton3-2
+Added Net: Name=NetHDR_DE0_1_36
+Added Pin To Net: NetName=NetHDR_DE0_1_38 Pin=HDR_DE0_1-38
+Added Pin To Net: NetName=NetHDR_DE0_1_38 Pin=HDR_DE0_1-38
+Added Pin To Net: NetName=NetHDR_DE0_1_38 Pin=micro_bouton1-2
+Added Pin To Net: NetName=NetHDR_DE0_1_38 Pin=micro_bouton1-2
+Added Net: Name=NetHDR_DE0_1_38
+Added Pin To Net: NetName=NetHDR_DE0_1_40 Pin=HDR_DE0_1-40
+Added Pin To Net: NetName=NetHDR_DE0_1_40 Pin=HDR_DE0_1-40
+Added Pin To Net: NetName=NetHDR_DE0_1_40 Pin=micro_bouton2-2
+Added Pin To Net: NetName=NetHDR_DE0_1_40 Pin=micro_bouton2-2
+Added Net: Name=NetHDR_DE0_1_40
+Added Room: Name=Schema_Horloge_DCF

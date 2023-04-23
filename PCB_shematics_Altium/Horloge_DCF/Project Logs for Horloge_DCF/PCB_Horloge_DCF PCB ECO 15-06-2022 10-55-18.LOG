@@ -1,0 +1,4 @@
+Added Pin To Net: NetName=Netact4_1 Pin=act4-1
+Added Pin To Net: NetName=Netact4_1 Pin=Seg_Disp4-8
+Added Net: Name=Netact4_1
+Added Room: Name=Schema_Horloge_DCF

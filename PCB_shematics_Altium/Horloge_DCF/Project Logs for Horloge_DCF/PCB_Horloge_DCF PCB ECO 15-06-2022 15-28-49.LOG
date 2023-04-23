@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=micro_bouton1 NewDesignator=micro_bouton2
+Change Component Designator: OldDesignator=micro_bouton2 NewDesignator=micro_bouton1
+Change Net Name : Old Net Name=Netmicro_bouton1_1 New Net Name=Netmicro_bouton2_1
+Change Net Name : Old Net Name=Netmicro_bouton2_1 New Net Name=Netmicro_bouton1_1
+Added Room: Name=Schema_Horloge_DCF

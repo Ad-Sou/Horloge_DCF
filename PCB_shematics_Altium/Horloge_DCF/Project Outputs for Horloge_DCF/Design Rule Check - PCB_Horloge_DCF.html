@@ -1,0 +1,573 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD21\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">15/06/2022</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">16:55:24</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc" class="file"><acronym title="P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc">P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">79</td></tr>
+</table>
+</td>
+</table><a name="ID3UDHPLKE4WLWENL5C0SMNCCRKJP5FQEUFW0QBBJMBK1EI5RWHYM"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWPNNSA5YI5XBBIDQCJAGQ5CUZFARTRVFVQTNKHBCCQKQXDK1URZO">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPBFYU0EZBYKTOQUFGEXJIR2ZCBZMMLFV1MDSFXOJQGKSRBOUGC0E">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5XJIV3GKCR4ZEHSGQB2Y3I4Y24FPXSO05SU32GKPEH5Y1LR5EMF">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID31OVIS5RDSY5PFW1ZWU534MS5KGK0NNPRDLEGNKFNFAD1W4CHMHG">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDE2W0YCWPJBAVDM1IJR0SEWW4YGVK1AJ50KKGQFLBPXZ3ESVYIZVM">Width Constraint (Min=10mil) (Max=40mil) (Preferred=20mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDG2NGXUOOCTSKHABARQGXZGZFNGFJKXVQG4CHGZF2LOYPFFO3NPZ">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAELHLYEMKLMUJ5RFKRU5UTZZJJNB5KWMPBEEZUBRPKWNHJY2TMHD">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID30RVRHYB035YKOJEAFFZ2VZRZPGJP0KE0D2KO3DMQJKIE2RBA0RM">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNR1HQWZSBKWNLR2CEDW24Y1CNMLJ0QYB3CMVX1DREIJKEC1EE55C">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">7</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSHRMMGASZM4JOCBSGK0VNQ5QPHLKBKRS0KI2WNCZBF3D0DF0DLGJ">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">44</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDQYUL2FYXK0YQO1LKT545CMZZRDKHLRUDKZ4ZJDJO213LVACMDQIG">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">28</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID0VOABFGDARXCDYDQHX11BCFN1B4JF3GKIW2OPHNYF2NGUZQQW2OC">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNEIB4WJYIPAKOIPEWU451BH3WLFVHRHKKFZVFJC0RZW2MPX1B0WO">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">79</td>
+</tr>
+</table><br><a name="IDNR1HQWZSBKWNLR2CEDW24Y1CNMLJ0QYB3CMVX1DREIJKEC1EE55C"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2480.398mil|Location2.X=2491.648mil|Location1.Y=4344.769mil|Location2.Y=4356.019mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2480.398mil|Location2.X=2491.648mil|Location1.Y=4344.769mil|Location2.Y=4356.019mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.323mil &lt; 10mil) Between Pad R1_100-2(2445.866mil,4364.172mil) on Top Layer And Via (2519.685mil,4350.394mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [9.323mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2618.194mil|Location2.X=2629.444mil|Location1.Y=4275.871mil|Location2.Y=4287.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2618.194mil|Location2.X=2629.444mil|Location1.Y=4275.871mil|Location2.Y=4287.121mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.323mil &lt; 10mil) Between Pad R2_100-2(2583.661mil,4285.432mil) on Top Layer And Via (2657.48mil,4281.496mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [9.323mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2755.989mil|Location2.X=2767.239mil|Location1.Y=4187.288mil|Location2.Y=4198.538mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2755.989mil|Location2.X=2767.239mil|Location1.Y=4187.288mil|Location2.Y=4198.538mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.323mil &lt; 10mil) Between Pad R3_100-2(2721.456mil,4206.692mil) on Top Layer And Via (2795.276mil,4192.913mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [9.323mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2893.784mil|Location2.X=2905.034mil|Location1.Y=4118.391mil|Location2.Y=4129.641mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2893.784mil|Location2.X=2905.034mil|Location1.Y=4118.391mil|Location2.Y=4129.641mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.323mil &lt; 10mil) Between Pad R4_100-2(2859.252mil,4127.952mil) on Top Layer And Via (2933.071mil,4124.016mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [9.323mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3031.58mil|Location2.X=3042.83mil|Location1.Y=4039.651mil|Location2.Y=4050.901mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3031.58mil|Location2.X=3042.83mil|Location1.Y=4039.651mil|Location2.Y=4050.901mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.323mil &lt; 10mil) Between Pad R5_100-2(2997.047mil,4049.212mil) on Top Layer And Via (3070.866mil,4045.276mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [9.323mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3169.375mil|Location2.X=3180.625mil|Location1.Y=3951.068mil|Location2.Y=3962.318mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3169.375mil|Location2.X=3180.625mil|Location1.Y=3951.068mil|Location2.Y=3962.318mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.323mil &lt; 10mil) Between Pad R6_100-2(3134.842mil,3970.472mil) on Top Layer And Via (3208.661mil,3956.693mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [9.323mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3307.17mil|Location2.X=3318.42mil|Location1.Y=3872.328mil|Location2.Y=3883.578mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3307.17mil|Location2.X=3318.42mil|Location1.Y=3872.328mil|Location2.Y=3883.578mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.323mil &lt; 10mil) Between Pad R7_100-2(3272.638mil,3891.732mil) on Top Layer And Via (3346.457mil,3877.953mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [9.323mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDSHRMMGASZM4JOCBSGK0VNQ5QPHLKBKRS0KI2WNCZBF3D0DF0DLGJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2516.315mil|Location2.X=2527.565mil|Location1.Y=4589.257mil|Location2.Y=4600.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2516.315mil|Location2.X=2527.565mil|Location1.Y=4589.257mil|Location2.Y=4600.507mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.12mil &lt; 10mil) Between Pad HDR_DE0_1-10(2491.339mil,4594.882mil) on Multi-Layer And Text "R1_51" (2528mil,4547mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.12mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2558.385mil|Location2.X=2566.051mil|Location1.Y=4598.92mil|Location2.Y=4606.586mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2558.385mil|Location2.X=2566.051mil|Location1.Y=4598.92mil|Location2.Y=4606.586mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad HDR_DE0_1-12(2591.339mil,4594.882mil) on Multi-Layer And Text "R1_51" (2528mil,4547mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2694.112mil|Location2.X=2701.778mil|Location1.Y=4603.147mil|Location2.Y=4610.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2694.112mil|Location2.X=2701.778mil|Location1.Y=4603.147mil|Location2.Y=4610.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad HDR_DE0_1-14(2691.339mil,4594.882mil) on Multi-Layer And Text "R1_51" (2528mil,4547mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2764.089mil|Location2.X=2771.756mil|Location1.Y=4582.26mil|Location2.Y=4589.927mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2764.089mil|Location2.X=2771.756mil|Location1.Y=4582.26mil|Location2.Y=4589.927mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad HDR_DE0_1-16(2791.339mil,4594.882mil) on Multi-Layer And Text "R1_51" (2528mil,4547mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4484.356mil|Location2.X=4492.022mil|Location1.Y=3913.49mil|Location2.Y=3921.156mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4484.356mil|Location2.X=4492.022mil|Location1.Y=3913.49mil|Location2.Y=3921.156mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton1-1(4517.717mil,3907.48mil) on Multi-Layer And Track (4488.189mil,3917.323mil)(4488.189mil,4153.543mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4484.356mil|Location2.X=4492.022mil|Location1.Y=3913.49mil|Location2.Y=3921.156mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4484.356mil|Location2.X=4492.022mil|Location1.Y=3913.49mil|Location2.Y=3921.156mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton1-1(4517.717mil,3907.48mil) on Multi-Layer And Track (4488.189mil,3917.323mil)(4724.409mil,3917.323mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4484.356mil|Location2.X=4492.022mil|Location1.Y=4138.85mil|Location2.Y=4146.516mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4484.356mil|Location2.X=4492.022mil|Location1.Y=4138.85mil|Location2.Y=4146.516mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton1-1(4517.717mil,4163.386mil) on Multi-Layer And Track (4488.189mil,3917.323mil)(4488.189mil,4153.543mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4484.356mil|Location2.X=4492.022mil|Location1.Y=4149.71mil|Location2.Y=4157.377mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4484.356mil|Location2.X=4492.022mil|Location1.Y=4149.71mil|Location2.Y=4157.377mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton1-1(4517.717mil,4163.386mil) on Multi-Layer And Track (4488.189mil,4153.543mil)(4724.409mil,4153.543mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4651.686mil|Location2.X=4659.352mil|Location1.Y=3913.49mil|Location2.Y=3921.156mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4651.686mil|Location2.X=4659.352mil|Location1.Y=3913.49mil|Location2.Y=3921.156mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton1-2(4694.882mil,3907.48mil) on Multi-Layer And Track (4488.189mil,3917.323mil)(4724.409mil,3917.323mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4720.576mil|Location2.X=4728.243mil|Location1.Y=3913.49mil|Location2.Y=3921.156mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4720.576mil|Location2.X=4728.243mil|Location1.Y=3913.49mil|Location2.Y=3921.156mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton1-2(4694.882mil,3907.48mil) on Multi-Layer And Track (4724.409mil,3917.323mil)(4724.409mil,4153.543mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4651.686mil|Location2.X=4659.352mil|Location1.Y=4149.71mil|Location2.Y=4157.377mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4651.686mil|Location2.X=4659.352mil|Location1.Y=4149.71mil|Location2.Y=4157.377mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton1-2(4694.882mil,4163.386mil) on Multi-Layer And Track (4488.189mil,4153.543mil)(4724.409mil,4153.543mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4720.576mil|Location2.X=4728.243mil|Location1.Y=4128.051mil|Location2.Y=4135.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4720.576mil|Location2.X=4728.243mil|Location1.Y=4128.051mil|Location2.Y=4135.717mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton1-2(4694.882mil,4163.386mil) on Multi-Layer And Track (4724.409mil,3917.323mil)(4724.409mil,4153.543mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4651.686mil|Location2.X=4659.352mil|Location1.Y=3352.466mil|Location2.Y=3360.133mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4651.686mil|Location2.X=4659.352mil|Location1.Y=3352.466mil|Location2.Y=3360.133mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton2-1(4694.882mil,3346.457mil) on Multi-Layer And Track (4488.189mil,3356.299mil)(4724.409mil,3356.299mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4720.576mil|Location2.X=4728.243mil|Location1.Y=3352.466mil|Location2.Y=3360.133mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4720.576mil|Location2.X=4728.243mil|Location1.Y=3352.466mil|Location2.Y=3360.133mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton2-1(4694.882mil,3346.457mil) on Multi-Layer And Track (4724.409mil,3356.299mil)(4724.409mil,3592.52mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4651.686mil|Location2.X=4659.352mil|Location1.Y=3588.686mil|Location2.Y=3596.353mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4651.686mil|Location2.X=4659.352mil|Location1.Y=3588.686mil|Location2.Y=3596.353mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton2-1(4694.882mil,3602.362mil) on Multi-Layer And Track (4488.189mil,3592.52mil)(4724.409mil,3592.52mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4720.576mil|Location2.X=4728.243mil|Location1.Y=3567.027mil|Location2.Y=3574.694mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4720.576mil|Location2.X=4728.243mil|Location1.Y=3567.027mil|Location2.Y=3574.694mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton2-1(4694.882mil,3602.362mil) on Multi-Layer And Track (4724.409mil,3356.299mil)(4724.409mil,3592.52mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4484.356mil|Location2.X=4492.022mil|Location1.Y=3352.466mil|Location2.Y=3360.133mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4484.356mil|Location2.X=4492.022mil|Location1.Y=3352.466mil|Location2.Y=3360.133mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton2-2(4517.717mil,3346.457mil) on Multi-Layer And Track (4488.189mil,3356.299mil)(4488.189mil,3592.52mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4484.356mil|Location2.X=4492.022mil|Location1.Y=3352.466mil|Location2.Y=3360.133mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4484.356mil|Location2.X=4492.022mil|Location1.Y=3352.466mil|Location2.Y=3360.133mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton2-2(4517.717mil,3346.457mil) on Multi-Layer And Track (4488.189mil,3356.299mil)(4724.409mil,3356.299mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4484.356mil|Location2.X=4492.022mil|Location1.Y=3577.826mil|Location2.Y=3585.492mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4484.356mil|Location2.X=4492.022mil|Location1.Y=3577.826mil|Location2.Y=3585.492mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton2-2(4517.717mil,3602.362mil) on Multi-Layer And Track (4488.189mil,3356.299mil)(4488.189mil,3592.52mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4484.356mil|Location2.X=4492.022mil|Location1.Y=3588.686mil|Location2.Y=3596.353mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4484.356mil|Location2.X=4492.022mil|Location1.Y=3588.686mil|Location2.Y=3596.353mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton2-2(4517.717mil,3602.362mil) on Multi-Layer And Track (4488.189mil,3592.52mil)(4724.409mil,3592.52mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4356.41mil|Location2.X=4364.077mil|Location1.Y=3352.466mil|Location2.Y=3360.133mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4356.41mil|Location2.X=4364.077mil|Location1.Y=3352.466mil|Location2.Y=3360.133mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton3-1(4399.606mil,3346.457mil) on Multi-Layer And Track (4192.913mil,3356.299mil)(4429.134mil,3356.299mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4425.301mil|Location2.X=4432.967mil|Location1.Y=3352.466mil|Location2.Y=3360.133mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4425.301mil|Location2.X=4432.967mil|Location1.Y=3352.466mil|Location2.Y=3360.133mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton3-1(4399.606mil,3346.457mil) on Multi-Layer And Track (4429.134mil,3356.299mil)(4429.134mil,3592.52mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4356.41mil|Location2.X=4364.077mil|Location1.Y=3588.686mil|Location2.Y=3596.353mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4356.41mil|Location2.X=4364.077mil|Location1.Y=3588.686mil|Location2.Y=3596.353mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton3-1(4399.606mil,3602.362mil) on Multi-Layer And Track (4192.913mil,3592.52mil)(4429.134mil,3592.52mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4425.301mil|Location2.X=4432.967mil|Location1.Y=3567.027mil|Location2.Y=3574.694mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4425.301mil|Location2.X=4432.967mil|Location1.Y=3567.027mil|Location2.Y=3574.694mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton3-1(4399.606mil,3602.362mil) on Multi-Layer And Track (4429.134mil,3356.299mil)(4429.134mil,3592.52mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4189.08mil|Location2.X=4196.747mil|Location1.Y=3352.466mil|Location2.Y=3360.133mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4189.08mil|Location2.X=4196.747mil|Location1.Y=3352.466mil|Location2.Y=3360.133mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton3-2(4222.441mil,3346.457mil) on Multi-Layer And Track (4192.913mil,3356.299mil)(4192.913mil,3592.52mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4189.08mil|Location2.X=4196.747mil|Location1.Y=3352.466mil|Location2.Y=3360.133mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4189.08mil|Location2.X=4196.747mil|Location1.Y=3352.466mil|Location2.Y=3360.133mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton3-2(4222.441mil,3346.457mil) on Multi-Layer And Track (4192.913mil,3356.299mil)(4429.134mil,3356.299mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4189.08mil|Location2.X=4196.747mil|Location1.Y=3577.826mil|Location2.Y=3585.492mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4189.08mil|Location2.X=4196.747mil|Location1.Y=3577.826mil|Location2.Y=3585.492mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton3-2(4222.441mil,3602.362mil) on Multi-Layer And Track (4192.913mil,3356.299mil)(4192.913mil,3592.52mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4189.08mil|Location2.X=4196.747mil|Location1.Y=3588.686mil|Location2.Y=3596.353mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4189.08mil|Location2.X=4196.747mil|Location1.Y=3588.686mil|Location2.Y=3596.353mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad micro_bouton3-2(4222.441mil,3602.362mil) on Multi-Layer And Track (4192.913mil,3592.52mil)(4429.134mil,3592.52mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2522.918mil|Location2.X=2534.168mil|Location1.Y=4432.341mil|Location2.Y=4443.591mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2522.918mil|Location2.X=2534.168mil|Location1.Y=4432.341mil|Location2.Y=4443.591mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.926mil &lt; 10mil) Between Pad R1_51-1(2549.213mil,4468.504mil) on Top Layer And Text "R1_100" (2414mil,4439mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.926mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2593.608mil|Location2.X=2601.274mil|Location1.Y=4435.167mil|Location2.Y=4442.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2593.608mil|Location2.X=2601.274mil|Location1.Y=4435.167mil|Location2.Y=4442.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad R1_51-2(2618.11mil,4468.504mil) on Top Layer And Text "R1_100" (2414mil,4439mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2702.052mil|Location2.X=2713.302mil|Location1.Y=4353.471mil|Location2.Y=4364.721mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2702.052mil|Location2.X=2713.302mil|Location1.Y=4353.471mil|Location2.Y=4364.721mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.186mil &lt; 10mil) Between Pad R2_51-1(2687.008mil,4389.764mil) on Top Layer And Text "R2_100" (2551mil,4360mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.186mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2731.403mil|Location2.X=2739.069mil|Location1.Y=4356.167mil|Location2.Y=4363.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2731.403mil|Location2.X=2739.069mil|Location1.Y=4356.167mil|Location2.Y=4363.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad R2_51-2(2755.905mil,4389.764mil) on Top Layer And Text "R2_100" (2551mil,4360mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2839.847mil|Location2.X=2851.097mil|Location1.Y=4274.601mil|Location2.Y=4285.851mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2839.847mil|Location2.X=2851.097mil|Location1.Y=4274.601mil|Location2.Y=4285.851mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.445mil &lt; 10mil) Between Pad R3_51-1(2824.803mil,4311.024mil) on Top Layer And Text "R3_100" (2689mil,4281mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.445mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2869.198mil|Location2.X=2876.865mil|Location1.Y=4277.167mil|Location2.Y=4284.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2869.198mil|Location2.X=2876.865mil|Location1.Y=4277.167mil|Location2.Y=4284.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad R3_51-2(2893.701mil,4311.024mil) on Top Layer And Text "R3_100" (2689mil,4281mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2977.643mil|Location2.X=2988.893mil|Location1.Y=4195.731mil|Location2.Y=4206.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2977.643mil|Location2.X=2988.893mil|Location1.Y=4195.731mil|Location2.Y=4206.981mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.705mil &lt; 10mil) Between Pad R4_51-1(2962.598mil,4232.283mil) on Top Layer And Text "R4_100" (2827mil,4202mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.705mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3006.993mil|Location2.X=3014.66mil|Location1.Y=4198.167mil|Location2.Y=4205.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3006.993mil|Location2.X=3014.66mil|Location1.Y=4198.167mil|Location2.Y=4205.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad R4_51-2(3031.496mil,4232.283mil) on Top Layer And Text "R4_100" (2827mil,4202mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3115.438mil|Location2.X=3126.688mil|Location1.Y=4117.361mil|Location2.Y=4128.611mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3115.438mil|Location2.X=3126.688mil|Location1.Y=4117.361mil|Location2.Y=4128.611mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.965mil &lt; 10mil) Between Pad R5_51-1(3100.393mil,4153.543mil) on Top Layer And Text "R5_100" (2965mil,4124mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.965mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3144.788mil|Location2.X=3152.455mil|Location1.Y=4120.167mil|Location2.Y=4127.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3144.788mil|Location2.X=3152.455mil|Location1.Y=4120.167mil|Location2.Y=4127.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad R5_51-2(3169.291mil,4153.543mil) on Top Layer And Text "R5_100" (2965mil,4124mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.233mil|Location2.X=3264.483mil|Location1.Y=4038.491mil|Location2.Y=4049.741mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3253.233mil|Location2.X=3264.483mil|Location1.Y=4038.491mil|Location2.Y=4049.741mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.225mil &lt; 10mil) Between Pad R6_51-1(3238.189mil,4074.803mil) on Top Layer And Text "R6_100" (3103mil,4045mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.225mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3282.584mil|Location2.X=3290.25mil|Location1.Y=4041.167mil|Location2.Y=4048.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3282.584mil|Location2.X=3290.25mil|Location1.Y=4041.167mil|Location2.Y=4048.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad R6_51-2(3307.086mil,4074.803mil) on Top Layer And Text "R6_100" (3103mil,4045mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3391.028mil|Location2.X=3402.278mil|Location1.Y=3959.621mil|Location2.Y=3970.871mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3391.028mil|Location2.X=3402.278mil|Location1.Y=3959.621mil|Location2.Y=3970.871mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.485mil &lt; 10mil) Between Pad R7_51-1(3375.984mil,3996.063mil) on Top Layer And Text "R7_100" (3240mil,3966mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.485mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3420.379mil|Location2.X=3428.045mil|Location1.Y=3962.167mil|Location2.Y=3969.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3420.379mil|Location2.X=3428.045mil|Location1.Y=3962.167mil|Location2.Y=3969.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad R7_51-2(3444.881mil,3996.063mil) on Top Layer And Text "R7_100" (3240mil,3966mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3528.823mil|Location2.X=3540.073mil|Location1.Y=3880.751mil|Location2.Y=3892.001mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3528.823mil|Location2.X=3540.073mil|Location1.Y=3880.751mil|Location2.Y=3892.001mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.745mil &lt; 10mil) Between Pad R8_51-1(3513.779mil,3917.323mil) on Top Layer And Text "R8_100" (3378mil,3887mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.745mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3558.174mil|Location2.X=3565.841mil|Location1.Y=3883.167mil|Location2.Y=3890.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3558.174mil|Location2.X=3565.841mil|Location1.Y=3883.167mil|Location2.Y=3890.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Pad R8_51-2(3582.677mil,3917.323mil) on Top Layer And Text "R8_100" (3378mil,3887mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDQYUL2FYXK0YQO1LKT545CMZZRDKHLRUDKZ4ZJDJO213LVACMDQIG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2027.406mil|Location2.X=2038.656mil|Location1.Y=4609.257mil|Location2.Y=4620.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2027.406mil|Location2.X=2038.656mil|Location1.Y=4609.257mil|Location2.Y=4620.507mil|Absolute=True">Silk To Silk Clearance Constraint: (8.74mil &lt; 10mil) Between Text "2" (1991.339mil,4614.882mil) on Bottom Overlay And Track (2041.339mil,4544.882mil)(2041.339mil,4744.882mil) on Bottom Overlay Silk Text to Silk Clearance [8.74mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2105.164mil|Location2.X=2112.83mil|Location1.Y=4166.154mil|Location2.Y=4173.82mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2105.164mil|Location2.X=2112.83mil|Location1.Y=4166.154mil|Location2.Y=4173.82mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "act1" (2099mil,4130mil) on Top Overlay And Text "act2" (1961mil,4130mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1967.164mil|Location2.X=1974.83mil|Location1.Y=4166.154mil|Location2.Y=4173.82mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1967.164mil|Location2.X=1974.83mil|Location1.Y=4166.154mil|Location2.Y=4173.82mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "act2" (1961mil,4130mil) on Top Overlay And Text "act3" (1823mil,4130mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1829.164mil|Location2.X=1836.83mil|Location1.Y=4166.154mil|Location2.Y=4173.82mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1829.164mil|Location2.X=1836.83mil|Location1.Y=4166.154mil|Location2.Y=4173.82mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "act3" (1823mil,4130mil) on Top Overlay And Text "act4" (1685mil,4130mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1683.121mil|Location2.X=1690.788mil|Location1.Y=4166.154mil|Location2.Y=4173.82mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1683.121mil|Location2.X=1690.788mil|Location1.Y=4166.154mil|Location2.Y=4173.82mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "act4" (1685mil,4130mil) on Top Overlay And Text "act5" (1547mil,4130mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1546.121mil|Location2.X=1553.788mil|Location1.Y=4166.154mil|Location2.Y=4173.82mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1546.121mil|Location2.X=1553.788mil|Location1.Y=4166.154mil|Location2.Y=4173.82mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "act5" (1547mil,4130mil) on Top Overlay And Text "act6" (1410mil,4130mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4480.167mil|Location2.X=4487.833mil|Location1.Y=3672.17mil|Location2.Y=3679.836mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4480.167mil|Location2.X=4487.833mil|Location1.Y=3672.17mil|Location2.Y=3679.836mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "micro_bouton2" (4484mil,3686mil) on Top Overlay And Text "micro_bouton3" (4188mil,3686mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2547.167mil|Location2.X=2554.833mil|Location1.Y=4416.147mil|Location2.Y=4423.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2547.167mil|Location2.X=2554.833mil|Location1.Y=4416.147mil|Location2.Y=4423.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R1_100" (2414mil,4439mil) on Top Overlay And Text "R2_100" (2551mil,4360mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2660.086mil|Location2.X=2667.752mil|Location1.Y=4495.147mil|Location2.Y=4502.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2660.086mil|Location2.X=2667.752mil|Location1.Y=4495.147mil|Location2.Y=4502.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R1_100" (2414mil,4439mil) on Top Overlay And Text "R2_51" (2666mil,4468mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2662.167mil|Location2.X=2669.833mil|Location1.Y=4533.17mil|Location2.Y=4540.837mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2662.167mil|Location2.X=2669.833mil|Location1.Y=4533.17mil|Location2.Y=4540.837mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R1_51" (2528mil,4547mil) on Top Overlay And Text "R2_51" (2666mil,4468mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2685.167mil|Location2.X=2692.833mil|Location1.Y=4337.147mil|Location2.Y=4344.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2685.167mil|Location2.X=2692.833mil|Location1.Y=4337.147mil|Location2.Y=4344.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R2_100" (2551mil,4360mil) on Top Overlay And Text "R3_100" (2689mil,4281mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2799.167mil|Location2.X=2806.833mil|Location1.Y=4416.147mil|Location2.Y=4423.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2799.167mil|Location2.X=2806.833mil|Location1.Y=4416.147mil|Location2.Y=4423.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R2_100" (2551mil,4360mil) on Top Overlay And Text "R3_51" (2803mil,4389mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2799.167mil|Location2.X=2806.833mil|Location1.Y=4445.147mil|Location2.Y=4452.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2799.167mil|Location2.X=2806.833mil|Location1.Y=4445.147mil|Location2.Y=4452.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R2_51" (2666mil,4468mil) on Top Overlay And Text "R3_51" (2803mil,4389mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2823.167mil|Location2.X=2830.833mil|Location1.Y=4258.147mil|Location2.Y=4265.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2823.167mil|Location2.X=2830.833mil|Location1.Y=4258.147mil|Location2.Y=4265.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R3_100" (2689mil,4281mil) on Top Overlay And Text "R4_100" (2827mil,4202mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2937.167mil|Location2.X=2944.833mil|Location1.Y=4337.147mil|Location2.Y=4344.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2937.167mil|Location2.X=2944.833mil|Location1.Y=4337.147mil|Location2.Y=4344.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R3_100" (2689mil,4281mil) on Top Overlay And Text "R4_51" (2941mil,4311mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2937.167mil|Location2.X=2944.833mil|Location1.Y=4367.147mil|Location2.Y=4374.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2937.167mil|Location2.X=2944.833mil|Location1.Y=4367.147mil|Location2.Y=4374.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R3_51" (2803mil,4389mil) on Top Overlay And Text "R4_51" (2941mil,4311mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2961.167mil|Location2.X=2968.833mil|Location1.Y=4180.147mil|Location2.Y=4187.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2961.167mil|Location2.X=2968.833mil|Location1.Y=4180.147mil|Location2.Y=4187.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R4_100" (2827mil,4202mil) on Top Overlay And Text "R5_100" (2965mil,4124mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3075.167mil|Location2.X=3082.833mil|Location1.Y=4258.147mil|Location2.Y=4265.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3075.167mil|Location2.X=3082.833mil|Location1.Y=4258.147mil|Location2.Y=4265.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R4_100" (2827mil,4202mil) on Top Overlay And Text "R5_51" (3079mil,4232mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3075.167mil|Location2.X=3082.833mil|Location1.Y=4288.147mil|Location2.Y=4295.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3075.167mil|Location2.X=3082.833mil|Location1.Y=4288.147mil|Location2.Y=4295.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R4_51" (2941mil,4311mil) on Top Overlay And Text "R5_51" (3079mil,4232mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.167mil|Location2.X=3106.833mil|Location1.Y=4101.147mil|Location2.Y=4108.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3099.167mil|Location2.X=3106.833mil|Location1.Y=4101.147mil|Location2.Y=4108.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R5_100" (2965mil,4124mil) on Top Overlay And Text "R6_100" (3103mil,4045mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3213.167mil|Location2.X=3220.833mil|Location1.Y=4180.147mil|Location2.Y=4187.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3213.167mil|Location2.X=3220.833mil|Location1.Y=4180.147mil|Location2.Y=4187.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R5_100" (2965mil,4124mil) on Top Overlay And Text "R6_51" (3217mil,4153mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3213.167mil|Location2.X=3220.833mil|Location1.Y=4209.147mil|Location2.Y=4216.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3213.167mil|Location2.X=3220.833mil|Location1.Y=4209.147mil|Location2.Y=4216.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R5_51" (3079mil,4232mil) on Top Overlay And Text "R6_51" (3217mil,4153mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3236.167mil|Location2.X=3243.833mil|Location1.Y=4022.147mil|Location2.Y=4029.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3236.167mil|Location2.X=3243.833mil|Location1.Y=4022.147mil|Location2.Y=4029.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R6_100" (3103mil,4045mil) on Top Overlay And Text "R7_100" (3240mil,3966mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3350.167mil|Location2.X=3357.833mil|Location1.Y=4101.147mil|Location2.Y=4108.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3350.167mil|Location2.X=3357.833mil|Location1.Y=4101.147mil|Location2.Y=4108.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R6_100" (3103mil,4045mil) on Top Overlay And Text "R7_51" (3354mil,4074mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3350.167mil|Location2.X=3357.833mil|Location1.Y=4130.147mil|Location2.Y=4137.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3350.167mil|Location2.X=3357.833mil|Location1.Y=4130.147mil|Location2.Y=4137.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R6_51" (3217mil,4153mil) on Top Overlay And Text "R7_51" (3354mil,4074mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3374.167mil|Location2.X=3381.833mil|Location1.Y=3943.147mil|Location2.Y=3950.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3374.167mil|Location2.X=3381.833mil|Location1.Y=3943.147mil|Location2.Y=3950.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R7_100" (3240mil,3966mil) on Top Overlay And Text "R8_100" (3378mil,3887mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3488.167mil|Location2.X=3495.833mil|Location1.Y=4022.147mil|Location2.Y=4029.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3488.167mil|Location2.X=3495.833mil|Location1.Y=4022.147mil|Location2.Y=4029.814mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R7_100" (3240mil,3966mil) on Top Overlay And Text "R8_51" (3492mil,3996mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3488.167mil|Location2.X=3495.833mil|Location1.Y=4060.17mil|Location2.Y=4067.836mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=P:\Documents\ET3 - S2\Projet_horloge_dcf_Altium\Horloge_DCF\PCB_Horloge_DCF.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3488.167mil|Location2.X=3495.833mil|Location1.Y=4060.17mil|Location2.Y=4067.836mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R7_51" (3354mil,4074mil) on Top Overlay And Text "R8_51" (3492mil,3996mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=NetHDR_DE0_1_38 Pin=micro_bouton2-2
+Removed Pin From Net: NetName=NetHDR_DE0_1_38 Pin=micro_bouton2-2
+Removed Pin From Net: NetName=NetHDR_DE0_1_36 Pin=micro_bouton3-2
+Removed Pin From Net: NetName=NetHDR_DE0_1_36 Pin=micro_bouton3-2
+Added Pin To Net: NetName=NetHDR_DE0_1_36 Pin=micro_bouton2-2
+Added Pin To Net: NetName=NetHDR_DE0_1_36 Pin=micro_bouton2-2
+Added Pin To Net: NetName=NetHDR_DE0_1_38 Pin=micro_bouton3-2
+Added Pin To Net: NetName=NetHDR_DE0_1_38 Pin=micro_bouton3-2
+Added Member To Class: ClassName=Schema_Horloge_DCF Member=Component micro_bouton1 micro_bouton_poussoir
+Added Room: Name=Schema_Horloge_DCF

@@ -1,0 +1,21 @@
+Added Component: Designator=micro_bouton3(Tactile Switch)
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 2"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "1555991"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 2"; Value = "1555982"; VariantName = "[No Variations]"
+Added Component: Designator=R3(RESC2012X05N)
+Add component (AddParameter): Name = "Mounting"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetHDR_DE0_1_29 Pin=R3-1
+Added Pin To Net: NetName=NetHDR_DE0_1_5 Pin=HDR_DE0_1-5
+Added Pin To Net: NetName=NetHDR_DE0_1_5 Pin=HDR_DE0_1-5
+Added Pin To Net: NetName=NetHDR_DE0_1_5 Pin=micro_bouton3-2
+Added Pin To Net: NetName=NetHDR_DE0_1_5 Pin=micro_bouton3-2
+Added Net: Name=NetHDR_DE0_1_5
+Added Pin To Net: NetName=Netmicro_bouton3_1 Pin=micro_bouton3-1
+Added Pin To Net: NetName=Netmicro_bouton3_1 Pin=micro_bouton3-1
+Added Pin To Net: NetName=Netmicro_bouton3_1 Pin=R3-2
+Added Net: Name=Netmicro_bouton3_1
+Added Member To Class: ClassName=Schema_Horloge_DCF Member=Component micro_bouton3 micro_bouton_poussoir
+Added Member To Class: ClassName=Schema_Horloge_DCF Member=Component R3 R_01K0_0805
+Added Room: Name=Schema_Horloge_DCF

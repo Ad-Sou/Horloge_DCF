@@ -1,0 +1,6 @@
+Added Component: Designator=HDR_DE0_?(ALTERA DE)
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2217597"; VariantName = "[No Variations]"
+Added Component: Designator=L?(POLYTECH_11MM_EMPTY)
+Added Class: Name=Schema_Horloge_DCF
+Added Room: Name=Schema_Horloge_DCF

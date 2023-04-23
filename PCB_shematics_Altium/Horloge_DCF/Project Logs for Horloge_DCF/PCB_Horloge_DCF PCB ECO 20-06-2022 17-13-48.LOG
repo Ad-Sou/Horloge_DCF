@@ -1,0 +1,17 @@
+Added Component: Designator=DS?(A-10(14))
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.agilent.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://cp.literature.agilent.com/litweb/pdf/5988-3325EN.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetDocument"; Value = "27-Aug-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "11-Oct-2004"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Display outline superimposed on PCB Footprint."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LED_Colour"; Value = "High Efficiency Red (HER)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LuminousIntensity"; Value = "340 ucd (Minimum)."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = "Pins 2 and 9 are redundant Cathodes."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDocument"; Value = "27-Aug-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "A-10(14)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "26-May-2004"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=Schema_Horloge_DCF Member=Component DS? 5082-7613
+Added Room: Name=Schema_Horloge_DCF
