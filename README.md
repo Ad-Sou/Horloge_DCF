@@ -1,9 +1,8 @@
 Vous trouverez ici les fichiers nécessaires à la création de l'horloge DCF, avec notamment :
  - Les plans de CAO pour le boitier
  - Le schéma de routage du PCB
- 
-A venir :
  - Le code VHDL de la DE0-nano utilisée 
+A venir :
  - Des instructions de montage
  - Un poster de présentation du projet
 
