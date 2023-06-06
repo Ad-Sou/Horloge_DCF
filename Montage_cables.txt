@@ -1,0 +1,32 @@
+
+data_in=>GPIO_1(2)
+
+
+
+
+
+
+num_aff(0) => GPIO_1(9)
+val_aff(3) => GPIO_1(10)
+num_aff(1) => GPIO_1(11)		//PROBLEME == VCC_SYS
+val_aff(3) => GPIO_1(12)		//PROBLEME == MASSE
+num_aff(2) => GPIO_1(13)
+val_aff(3) => GPIO_1(14)
+
+val_aff(3) => GPIO_1(16)
+
+val_aff(4) => GPIO_1(18)
+num_aff(3) => GPIO_1(19)
+val_aff(5) => GPIO_1(20)
+num_aff(4) => GPIO_1(21)
+val_aff(6) => GPIO_1(22)
+num_aff(5) => GPIO_1(23)
+
+
+
+
+bouton2=> GPIO_1(28)
+-----------------------VCC3P3
+bouton1=> GPIO_1(30)			// PROBLEME == MASSE
+
+reset => GPIO_1(32)
